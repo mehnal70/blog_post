@@ -15,12 +15,13 @@ class CreatePostForm(FlaskForm):
 
 class CreateUserForm(FlaskForm):
     name = StringField("Name", validators=[DataRequired()])
-    email = EmailField("Email", validators=[DataRequired(), email("This field requires a valid email address")])
+    email = StringField("Email", validators=[DataRequired()])
+    #email = EmailField("Email", validators=[DataRequired(), email("This field requires a valid email address")])
     password = PasswordField("Password", validators=[DataRequired()])
     submit = SubmitField("Submit User")
     
 class LoginForm(FlaskForm):
-    email = EmailField("Email", validators=[DataRequired()])
+    email = StringField("Email", validators=[DataRequired()])
     password = PasswordField("Password", validators=[DataRequired()])
     submit = SubmitField("Let Me In!")
     
